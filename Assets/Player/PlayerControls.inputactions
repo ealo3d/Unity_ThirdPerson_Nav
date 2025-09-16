@@ -128,6 +128,45 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "PlayerActions",
+            "id": "c66aecab-23ae-47eb-b7b5-11a85cf55119",
+            "actions": [
+                {
+                    "name": "Shift",
+                    "type": "Button",
+                    "id": "4f322eee-3f52-44e0-99cc-8b67d025cfab",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e024135e-36fd-4ab8-83f8-abd33addc327",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8aca72be-00e3-459e-a306-f94e58b475dd",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

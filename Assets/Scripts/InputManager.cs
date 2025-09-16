@@ -4,16 +4,20 @@ public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;
     AnimatorManager animatorManager;
+    PlayerMovement playerMovement;
 
     public Vector2 movementInput;
 
     public float verticalInput;
     public float horizontalInput;
-    private float moveAmount;
+    public float moveAmount;
+
+    public bool shiftInput;
 
     private void Awake()
     {
         animatorManager = GetComponent<AnimatorManager>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void OnEnable()
@@ -22,6 +26,9 @@ public class InputManager : MonoBehaviour
         {
             playerControls = new PlayerControls();
             playerControls.PlayerMovement.HorizontalMovement.performed += i => movementInput = i.ReadValue<Vector2>();
+
+            playerControls.PlayerActions.Shift.performed += i => shiftInput = true;
+            playerControls.PlayerActions.Shift.canceled += i => shiftInput = false;
         }
         playerControls.Enable();
     }
@@ -38,13 +45,20 @@ public class InputManager : MonoBehaviour
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
 
-        animatorManager.UpdateAnimatorValue(0, moveAmount);
+        animatorManager.UpdateAnimatorValue(0, moveAmount, playerMovement.isRunning);
     }
 
     public void HandleAllInputs ()
     {
         HandleMovementInput();
-        //JumpingInput();
-        //any other function we need!
+        HandleRunningInput();
+    }
+
+    private void HandleRunningInput()
+    {
+        if (shiftInput && moveAmount > 0.5f)
+            playerMovement.isRunning = true;
+        else
+            playerMovement.isRunning = false;
     }
 }
