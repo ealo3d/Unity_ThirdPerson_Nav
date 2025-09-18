@@ -13,10 +13,21 @@ public class AnimatorManager : MonoBehaviour
         vertical = Animator.StringToHash("Vertical");
     }
 
-    public void UpdateAnimatorValue(float horizontalMovement, float verticalMovement)
+    public void UpdateAnimatorValue(float horizontalMovement, float verticalMovement, bool isRunning)
     {
+        if (isRunning)
+        {
+            verticalMovement = 2;
+        }
+        
         animator.SetFloat(horizontal, horizontalMovement, 0.1f, Time.deltaTime);
         animator.SetFloat(vertical, verticalMovement, 0.1f, Time.deltaTime);
     }
     
+    public void PlayerTargetAnimation(string targetAnimation, bool isInteracting)
+    {
+        animator.SetBool("isInteracting", isInteracting);
+        animator.CrossFade(targetAnimation, 0.2f);
+    }
+
 }

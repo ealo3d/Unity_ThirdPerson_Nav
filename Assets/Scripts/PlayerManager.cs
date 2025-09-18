@@ -4,11 +4,15 @@ public class PlayerManager : MonoBehaviour
 {
     InputManager inputManager;
     PlayerMovement playerMovement;
+    Animator animator;
+
+    public bool isInteracting;
 
     private void Awake()
     {
         inputManager = GetComponent<InputManager>();
         playerMovement = GetComponent<PlayerMovement>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,5 +25,11 @@ public class PlayerManager : MonoBehaviour
     {
         playerMovement.HandleAllMovement();
     }
+
+    private void LateUpdate()
+    {
+        isInteracting = animator.GetBool("isInteracting");
+    }
+
 
 }

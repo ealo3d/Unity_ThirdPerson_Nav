@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Player\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\ResetBool.cs" />
     <Compile Include="Assets\Scripts\AnimatorManager.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
