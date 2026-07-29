@@ -10,8 +10,8 @@ public class Movement : MonoBehaviour
 
     #region 2. Variables de Gravedad (Descomentar en la Fase 2)
     /*
-    [SerializeField] float gravity = -30f; 
-    Vector3 verticalVelocity = Vector3.zero;
+    [SerializeField] float gravity = -30f; //este valor debe ajustarse dependiendo de la escala de la escena
+    Vector3 verticalVelocity = Vector3.zero; // velocidad vertical inicializada en cero
     [SerializeField] LayerMask groundMask; 
     bool isGrounded;
     */
