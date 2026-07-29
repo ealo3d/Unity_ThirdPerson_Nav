@@ -9,12 +9,12 @@ public class Movement : MonoBehaviour
     Vector2 horizontalInput;
 
     #region 2. Variables de Gravedad (Descomentar en la Fase 2)
-    /*
+    
     [SerializeField] float gravity = -30f; 
     Vector3 verticalVelocity = Vector3.zero;
     [SerializeField] LayerMask groundMask; 
     bool isGrounded;
-    */
+    
     #endregion
 
     #region 3. Variables de Salto (Descomentar en la Fase 3)
@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         #region 2. Lógica de Gravedad - Suelo (Descomentar en la Fase 2)
-        /*
+        
         // Crea una esfera invisible para detectar si tocamos la capa "Ground"
         isGrounded = Physics.CheckSphere(transform.position, 0.1f, groundMask);
 
@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
         {
             verticalVelocity.y = 0f; 
         }
-        */
+        
         #endregion
 
         // 1. Movimiento Base (Horizontal)
@@ -84,11 +84,11 @@ public class Movement : MonoBehaviour
         #endregion
         
         #region 2. Lógica de Gravedad - Caída (Descomentar en la Fase 2)
-        /*
+        
         // Aplica la gravedad en el tiempo y mueve el controlador hacia abajo
         verticalVelocity.y += gravity * Time.deltaTime; 
         controller.Move(verticalVelocity * Time.deltaTime); 
-        */
+        
         #endregion
     }
 
