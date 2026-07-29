@@ -16,10 +16,14 @@ public class InputManager : MonoBehaviour
     #endregion
 
     // --- VARIABLES DEL SISTEMA DE INPUT ---
+    //Instancia de PlayerControls para manejar los inputs del jugador
     PlayerControls controls; 
+    
+    //Para evitar escribir PlayerControls.GroundMovementActions cada que llame una acción  
     PlayerControls.GroundMovementActions groundMovement; 
 
     // --- ALMACENAMIENTO DE DATOS ---
+    // Para guardar los inputs 2D de las teclas WASD
     Vector2 horizontalInput; 
 
     #region 3. Input del Ratón (Descomentar en la Fase 3)
@@ -30,11 +34,14 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        controls = new PlayerControls(); 
-        groundMovement = controls.GroundMovement; 
+        //Crear una nueva instancia de la clase PlayerControls
+        controls = new PlayerControls();
+
+        //Guardar la propiedad GroundMovement de controls 
+        groundMovement = controls.GroundMovement;
 
         // 1. Fase Base: Movimiento Horizontal
-        // Captura el valor WASD y lo guarda en la variable
+        // Captura el valor WASD y lo guarda en la variable horizontalInput
         groundMovement.HorizontalMovement.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
 
         #region 2. Evento de Salto (Descomentar en la Fase 2)
