@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] CharacterController controller; 
-    [SerializeField] float speed = 11f; 
-    Vector2 horizontalInput;
+    [SerializeField] CharacterController controller; //Para referenciar el Character Controller
+    [SerializeField] float speed = 11f; //Velocidad del personaje
+    Vector2 horizontalInput; //Guardar el input horizontal
 
     #region 2. Variables de Gravedad (Descomentar en la Fase 2)
     /*
@@ -55,6 +55,8 @@ public class Movement : MonoBehaviour
         // 1. Movimiento Base (Horizontal)
         // Calcula la dirección basándose en hacia dónde mira el jugador
         Vector3 horizontalVelocity = (transform.right * horizontalInput.x + transform.forward * horizontalInput.y) * speed;
+
+        //Pasar al metodo Move de CharacterController el valor de horizontalVelocity * deltatime (independiente del framerate)
         controller.Move(horizontalVelocity * Time.deltaTime);
 
         #region 4. Lógica de Animación (Descomentar en la Fase 4)
@@ -92,9 +94,10 @@ public class Movement : MonoBehaviour
         #endregion
     }
 
+    //Metodo para recibir el horizontal input desde el script InputManager
     public void ReceiveInput(Vector2 _horizontalInput) 
     {
-        horizontalInput = _horizontalInput; 
+        horizontalInput = _horizontalInput; //Guardar el valor que viene desde el InputManager 
     }
 
     #region 3. Función del Salto (Descomentar en la Fase 3)
