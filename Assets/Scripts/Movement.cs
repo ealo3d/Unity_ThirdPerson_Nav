@@ -18,10 +18,10 @@ public class Movement : MonoBehaviour
     #endregion
 
     #region 3. Variables de Salto (Descomentar en la Fase 3)
-    /*
+    
     [SerializeField] float jumpHeight = 3.5f;
     bool jump;
-    */
+    
     #endregion
 
     #region 4. Variables de Animación (Descomentar en la Fase 4)
@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour
         #endregion
 
         #region 3. Lógica de Salto (Descomentar en la Fase 3)
-        /*
+        
         // El salto se calcula ANTES de aplicar la gravedad
         if (jump) 
         {
@@ -80,7 +80,7 @@ public class Movement : MonoBehaviour
             }
             jump = false; 
         }
-        */
+        
         #endregion
         
         #region 2. Lógica de Gravedad - Caída (Descomentar en la Fase 2)
@@ -98,11 +98,11 @@ public class Movement : MonoBehaviour
     }
 
     #region 3. Función del Salto (Descomentar en la Fase 3)
-    /*
+    
     public void OnJumpPressed() 
     {
         jump = true; 
     }
-    */
+    
     #endregion
 }
