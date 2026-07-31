@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     */
     #endregion
 
-    #region 4. Variables de Animación (Descomentar en la Fase 4)
+    #region 5. Variables de Animación (Descomentar en la Fase 5)
     /*
     [SerializeField] Animator anim;
     private int velocityHash;
@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
         //Pasar al metodo Move de CharacterController el valor de horizontalVelocity * deltatime (independiente del framerate)
         controller.Move(horizontalVelocity * Time.deltaTime);
 
-        #region 4. Lógica de Animación (Descomentar en la Fase 4)
+        #region 5. Lógica de Animación (Descomentar en la Fase 5)
         /*
         // Tomamos la velocidad física real (ignorando caídas)
         Vector3 playerRealSpeed = new Vector3(controller.velocity.x, 0f, controller.velocity.z);
