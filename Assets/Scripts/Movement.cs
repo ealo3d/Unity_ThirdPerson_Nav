@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     #endregion
 
     #region 4. Variables de Animación (Descomentar en la Fase 4)
-    /*
+    
     [SerializeField] Animator anim;
     private int velocityHash;
 
@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
         // Optimizamos el string del parámetro para mayor rendimiento
         velocityHash = Animator.StringToHash("PlayerVelocity");
     }
-    */
+    
     #endregion
 
     private void Update()
@@ -58,14 +58,14 @@ public class Movement : MonoBehaviour
         controller.Move(horizontalVelocity * Time.deltaTime);
 
         #region 4. Lógica de Animación (Descomentar en la Fase 4)
-        /*
+        
         // Tomamos la velocidad física real (ignorando caídas)
         Vector3 playerRealSpeed = new Vector3(controller.velocity.x, 0f, controller.velocity.z);
         // La convertimos a un valor de 0 a 1 para el Blend Tree
         float animationSpeed = playerRealSpeed.magnitude / speed;
         // Transición suave de 0.1 segundos
         anim.SetFloat(velocityHash, animationSpeed, 0.1f, Time.deltaTime);
-        */
+        
         #endregion
 
         #region 3. Lógica de Salto (Descomentar en la Fase 3)

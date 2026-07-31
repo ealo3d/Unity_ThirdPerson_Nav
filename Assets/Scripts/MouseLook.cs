@@ -9,11 +9,11 @@ public class MouseLook : MonoBehaviour
     float mouseX, mouseY; 
 
     #region 2. Variables Mirada Vertical (Descomentar en Fase 2)
-    /*
+    
     [SerializeField] Transform playerCamera;
     [SerializeField] float xClamp = 85f;
     float xRotation = 0f;
-    */
+    
     #endregion
 
     private void Update()
@@ -23,7 +23,7 @@ public class MouseLook : MonoBehaviour
         transform.Rotate(Vector3.up, mouseX * Time.deltaTime); 
 
         #region 2. Lógica Mirada Vertical (Descomentar en Fase 2)
-        /*
+        
         // Calculamos la rotación (se resta para no invertir el control)
         xRotation -= mouseY; 
         
@@ -34,7 +34,7 @@ public class MouseLook : MonoBehaviour
         Vector3 targetRotation = transform.eulerAngles;
         targetRotation.x = xRotation; 
         playerCamera.eulerAngles = targetRotation; 
-        */
+        
         #endregion
     }
 
