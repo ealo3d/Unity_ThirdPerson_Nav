@@ -38,10 +38,10 @@ public class InputManager : MonoBehaviour
         groundMovement.HorizontalMovement.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
 
         #region 2. Evento de Salto (Descomentar en la Fase 2)
-        /*
+        
         // Escucha la barra espaciadora y avisa al script Movement
         groundMovement.Jump.performed += x => movement.OnJumpPressed();
-        */
+        
         #endregion
 
         #region 3. Eventos del Ratón (Descomentar en la Fase 3)
