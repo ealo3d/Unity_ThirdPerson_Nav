@@ -8,7 +8,7 @@ public class MouseLook : MonoBehaviour
     [SerializeField] float sensitivityY = 0.5f; 
     float mouseX, mouseY; 
 
-    #region 2. Variables Mirada Vertical (Descomentar en Fase 2)
+    #region 5. Variables Mirada Vertical (Descomentar en Fase 5)
     /*
     [SerializeField] Transform playerCamera;
     [SerializeField] float xClamp = 85f;
@@ -22,7 +22,7 @@ public class MouseLook : MonoBehaviour
         // Rota todo el cuerpo del jugador (cápsula/Demy) en el eje Y
         transform.Rotate(Vector3.up, mouseX * Time.deltaTime); 
 
-        #region 2. Lógica Mirada Vertical (Descomentar en Fase 2)
+        #region 5. Lógica Mirada Vertical (Descomentar en Fase 5)
         /*
         // Calculamos la rotación (se resta para no invertir el control)
         xRotation -= mouseY; 
