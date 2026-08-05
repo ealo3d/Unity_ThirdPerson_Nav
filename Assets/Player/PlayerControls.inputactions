@@ -3,11 +3,11 @@
     "name": "PlayerControls",
     "maps": [
         {
-            "name": "GroundMovement",
+            "name": "PlayerMovement",
             "id": "fd9a77b7-b7d9-45a6-a555-6e789b64b441",
             "actions": [
                 {
-                    "name": "HorizontalMovement",
+                    "name": "Movement",
                     "type": "PassThrough",
                     "id": "355479c3-e8c6-477e-be14-599c75849c0d",
                     "expectedControlType": "Vector2",
@@ -24,7 +24,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovement",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -35,7 +35,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -46,7 +46,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -57,7 +57,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -68,7 +68,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
