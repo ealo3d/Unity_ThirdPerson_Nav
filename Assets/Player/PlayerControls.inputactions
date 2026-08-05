@@ -14,33 +14,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "a79eed4e-6f01-420d-84a8-b6a00d6bb448",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MouseX",
-                    "type": "PassThrough",
-                    "id": "4d55af41-68c3-4cbe-be3e-1c191d595e00",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MouseY",
-                    "type": "PassThrough",
-                    "id": "5ab98add-cc9e-4864-994b-b29e28d06d87",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -98,39 +71,6 @@
                     "action": "HorizontalMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "9a449492-a33f-47ff-8d87-d1bc75951741",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "87d7743f-3863-4cb1-a590-6e7db4546f46",
-                    "path": "<Mouse>/delta/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseX",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "808032ee-e8cb-413f-aa34-3918386e05fb",
-                    "path": "<Mouse>/delta/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseY",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }
