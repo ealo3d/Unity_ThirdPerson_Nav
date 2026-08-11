@@ -1,20 +1,20 @@
-using UnityEngine; 
+using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour 
+public class PlayerMovement : MonoBehaviour
 {
     InputManager inputManager; // Referencia al script InputManager para leer las entradas del jugador.
     Vector3 moveDirection; // Almacena la dirección en la que el jugador se moverá en el espacio 3D.
     Transform cameraObject; // Referencia al Transform de la cámara principal para calcular el movimiento relativo a ella.
     Rigidbody playerRigidbody; // Referencia al componente Rigidbody del jugador para aplicar movimiento físico.
-    public float movementSpeed = 7; // Velocidad base a la que se mueve el personaje.
+    //public float movementSpeed = 7; // Velocidad base a la que se mueve el personaje.
     public float rotationSpeed = 15; // Velocidad a la que el personaje gira sobre sí mismo para encarar la dirección de movimiento.
 
     #region FASE 2
-    
+
     public float walkingSpeed = 2.5f; // Velocidad para caminar.
     public float runningSpeed = 7f; // Velocidad para correr.
     public bool isRunning; //Para indicar si el personaje está corriendo.
-    
+
     #endregion
 
     #region FASE 3
@@ -33,10 +33,10 @@ public class PlayerMovement : MonoBehaviour
     */
     #endregion
 
-    private void Awake() 
+    private void Awake()
     {
-        inputManager = GetComponent<InputManager>(); 
-        playerRigidbody = GetComponent<Rigidbody>(); 
+        inputManager = GetComponent<InputManager>();
+        playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform; // Busca la cámara principal de la escena y asigna su transform a la variable cameraObject.
 
         #region FASE 3
@@ -64,35 +64,35 @@ public class PlayerMovement : MonoBehaviour
     private void HandleMovement() // Calcula y aplica la velocidad para mover al personaje.
     {
         // Calcula el movimiento adelante/atrás en base hacia donde mira la cámara.
-        moveDirection = cameraObject.forward * inputManager.verticalInput; 
+        moveDirection = cameraObject.forward * inputManager.verticalInput;
 
         // Le suma a esa dirección el movimiento lateral (izquierda/derecha) de la cámara.
-        moveDirection += cameraObject.right * inputManager.horizontalInput; 
+        moveDirection += cameraObject.right * inputManager.horizontalInput;
 
         // Fuerza el eje Y a 0 para que la dirección de movimiento no lo eleve o lo hunda en el suelo.
-        moveDirection.y = 0; 
+        moveDirection.y = 0;
 
         // Normaliza el vector (magnitud de 1) para que caminar en diagonal no sea más rápido.
-        moveDirection.Normalize(); 
+        moveDirection.Normalize();
 
         #region FASE 2
-        
+
         // Si está corriendo, multiplica la dirección por la velocidad de correr.
-        if (isRunning) { moveDirection *= runningSpeed; } 
-        
+        if (isRunning) { moveDirection *= runningSpeed; }
+
         // Si no corre, la multiplica por la velocidad de caminar.
-        else { moveDirection *= walkingSpeed; } 
-        
+        else { moveDirection *= walkingSpeed; }
+
         #endregion
 
         // (NOTA CLASE: Borra esta línea cuando pases a la Fase 2 visualmente)
-        moveDirection *= movementSpeed; // FASE 1: Aplica siempre la velocidad constante base a la dirección.
+        //moveDirection *= movementSpeed; // FASE 1: Aplica siempre la velocidad constante base a la dirección.
 
         // Guarda la dirección calculada (ya con velocidad) en un vector de velocidad final.
         Vector3 movementVelocity = moveDirection;
 
         // Sobrescribe la velocidad del Rigidbody con nuestra velocidad calculada para moverlo físicamente.
-        playerRigidbody.linearVelocity = movementVelocity; 
+        playerRigidbody.linearVelocity = movementVelocity;
     }
 
     private void HandleRotation() // Calcula y aplica la rotación para que el modelo mire hacia donde se dirige.
@@ -107,19 +107,19 @@ public class PlayerMovement : MonoBehaviour
         targetDirection.y = 0;
 
         // Normaliza la dirección objetivo.
-        targetDirection.Normalize(); 
+        targetDirection.Normalize();
 
         // Si no hay inputs, la dirección objetivo sigue siendo su dirección actual frontal (para no resetear su rotación).
-        if (targetDirection == Vector3.zero) targetDirection = transform.forward; 
+        if (targetDirection == Vector3.zero) targetDirection = transform.forward;
 
         // Calcula la rotación (Quaternion) necesaria para mirar hacia la 'targetDirection'.
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection); 
-        
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+
         // Interpola suavemente entre la rotación actual y la objetivo según la velocidad de rotación y el tiempo del frame.
-        Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime); 
+        Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         // Aplica la rotación interpolada y suavizada al objeto del jugador.
-        transform.rotation = playerRotation; 
+        transform.rotation = playerRotation;
     }
 
     #region FASE 3
