@@ -1,4 +1,4 @@
-﻿<Project>
+<Project>
   <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
   <PropertyGroup>
     <BaseIntermediateOutputPath>Temp\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
@@ -50,9 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Player\PlayerControls.cs" />
-    <Compile Include="Assets\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\AnimatorManager.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
-    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

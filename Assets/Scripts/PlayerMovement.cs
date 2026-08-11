@@ -10,11 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 15; // Velocidad a la que el personaje gira sobre sí mismo para encarar la dirección de movimiento.
 
     #region FASE 2
-    /*
+    
     public float walkingSpeed = 2.5f; // Velocidad para caminar.
     public float runningSpeed = 7f; // Velocidad para correr.
     public bool isRunning; //Para indicar si el personaje está corriendo.
-    */
+    
     #endregion
 
     #region FASE 3
@@ -76,13 +76,13 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.Normalize(); 
 
         #region FASE 2
-        /*
+        
         // Si está corriendo, multiplica la dirección por la velocidad de correr.
         if (isRunning) { moveDirection *= runningSpeed; } 
         
         // Si no corre, la multiplica por la velocidad de caminar.
         else { moveDirection *= walkingSpeed; } 
-        */
+        
         #endregion
 
         // (NOTA CLASE: Borra esta línea cuando pases a la Fase 2 visualmente)
