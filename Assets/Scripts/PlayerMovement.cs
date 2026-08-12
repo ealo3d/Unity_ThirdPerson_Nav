@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region FASE 3
-    /*
+    
     PlayerManager playerManager; // Referencia al script principal del jugador para revisar su estado.
     AnimatorManager animatorManager; // Referencia al script que controla las animaciones del jugador.
     
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxDistance = 0.5f; // Distancia máxima que recorre el rayo hacia abajo para buscar el suelo.
     public LayerMask groundLayer; // Identifica qué capas del entorno son consideradas "suelo".
     public bool isGrounded; //Para saber si el personaje está tocando el suelo.
-    */
+    
     #endregion
 
     private void Awake()
@@ -40,21 +40,21 @@ public class PlayerMovement : MonoBehaviour
         cameraObject = Camera.main.transform; // Busca la cámara principal de la escena y asigna su transform a la variable cameraObject.
 
         #region FASE 3
-        /*
+        
         playerManager = GetComponent<PlayerManager>(); // Obtiene el PlayerManager.
         animatorManager = GetComponentInChildren<AnimatorManager>(); // Obtiene el AnimatorManager que está en un objeto hijo.
         isGrounded = true; // Por defecto el jugador se considera en el suelo al iniciar.
-        */
+        
         #endregion
     }
 
     public void HandleAllMovement() // Función principal que agrupa todo el manejo de movimiento (translación y rotación).
     {
         #region FASE 3
-        /*
+        
         HandleFallingAndLanding(); // Llama a la función que calcula si el jugador cae o aterriza.
         if (playerManager.isInteracting) return; // Si el jugador está bloqueado en una animación importante, interrumpe el movimiento.
-        */
+        
         #endregion
 
         HandleMovement(); // Llama a la función que se encarga del desplazamiento (translación).
@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     #region FASE 3
-    /*
+    
     // Detecta si hay suelo y aplica animaciones y fuerzas de gravedad.
     private void HandleFallingAndLanding()
     {
@@ -177,6 +177,6 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false; 
         }
     }
-    */
+    
     #endregion
 }

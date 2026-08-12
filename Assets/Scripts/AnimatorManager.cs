@@ -28,14 +28,14 @@ public class AnimatorManager : MonoBehaviour
         if (isRunning) { verticalMovement = 2f; }
 
         // Actualizamos el parámetro horizontal en el Animator, con un tiempo de suavizado de 0.1 segundos (dampTime)
-        animator.SetFloat(horizontal, horizontalMovement, 0.1f, Time.deltaTime);
+        animator.SetFloat(horizontal, horizontalMovement, 0.05f, Time.deltaTime);
         
         // Actualizamos el parámetro vertical en el Animator, con el mismo tiempo de suavizado para evitar cambios bruscos
-        animator.SetFloat(vertical, verticalMovement, 0.1f, Time.deltaTime);
+        animator.SetFloat(vertical, verticalMovement, 0.05f, Time.deltaTime);
     }
     
     #region FASE 3
-    /*
+    
     // Método para forzar la reproducción de una animación específica y marcar al jugador como interactuando
     public void PlayerTargetAnimation(string targetAnimation, bool isInteracting)
     {
@@ -45,6 +45,6 @@ public class AnimatorManager : MonoBehaviour
         // Hacemos una transición suave hacia la nueva animación (targetAnimation) en 0.2 segundos
         animator.CrossFade(targetAnimation, 0.2f);
     }
-    */
+    
     #endregion
 }
