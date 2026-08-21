@@ -9,7 +9,7 @@ AnimatorController:
   m_Name: Mutant
   serializedVersion: 6
   m_AnimatorParameters:
-  - m_Name: EnemySpeed
+  - m_Name: Speed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -53,7 +53,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: EnemySpeed
     m_Mirror: 0
-  m_BlendParameter: EnemySpeed
+  m_BlendParameter: Speed
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
